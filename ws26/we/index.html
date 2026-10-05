@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kless - WE - WS26</title>
+<script
+    src="https://cdn.jsdelivr.net/gh/ccmjs/app_collection@v1.0.0/libs/framework/ccm-28.0.0.min.js"
+    integrity="sha384-HDMeDDgKlR2OFJ3ECMwmA6wknqpfpeCiSZYlUhQaFg9FKrvHJp8MMSwrxibvWJ2G"
+    crossorigin="anonymous"
+></script>
+<div id="app-collection"></div>
+<script type="module">
+  await ccm.start("https://cdn.jsdelivr.net/gh/ccmjs/app_collection@v1.0.0/ccm.app_collection-1.0.0.min.mjs#sha384-Q4krSOdtGOKrXf/O7A+4czbgCbOzNi+cKhrMOEf21PDLS/TQkqwWMhNR9otXGngw", {
+    ignore: { sections: [
+      { id: '00_start', title: 'Einführung', items: [
+        { id: '00_start-lecture', title: 'Vorlesung', icon: '🧑‍🏫', app: ['ccm.start', 'https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE', {
+          pdf: "./resources/Einführung.pdf",
+        } ] },
+      ] },
+      { id: '01_html', title: 'Kapitel 1: WWW, HTTP, URI, HTML', items: [
+        { id: '01_html-lecture', title: 'Vorlesung', icon: '🧑‍🏫', app: ['ccm.start', 'https://cdn.jsdelivr.net/gh/ccmjs/slidecast@v1.0.0/ccm.slidecast-1.0.0.min.mjs#sha384-r3cJDePwtLuCIOK5jwR+ci9Z6qoCaoTc7FjHqKu6N5gsMC6bwF0jdNVu98oGOg8Z', {
+            pdf: "./01_html/slides.pdf",
+            ignore: { slides: [
+                { page: 1, audio: './01_html/slide01.mp3' },
+                { page: 2, audio: './01_html/slide02.mp3' },
+                { page: 3, audio: './01_html/slide03.mp3' },
+                { page: 4, audio: './01_html/slide04.mp3' },
+                { page: 5, audio: './01_html/slide05.mp3' },
+                { page: 6, audio: './01_html/slide06.mp3' },
+                { page: 7, audio: './01_html/slide07.mp3' },
+                { page: 8, audio: './01_html/slide08.mp3' },
+                { page: 9, audio: './01_html/slide09.mp3' },
+                { page: 10, audio: './01_html/slide10.mp3' },
+                { page: 11, audio: './01_html/slide11.mp3' },
+                { page: 12, audio: './01_html/slide12.mp3' },
+                { page: 13, audio: './01_html/slide13.mp3' },
+                { page: 14, audio: './01_html/slide14.mp3' },
+                { page: 15, audio: './01_html/slide15.mp3' },
+                { page: 16, audio: './01_html/slide16.mp3' },
+                { page: 17, audio: './01_html/slide17.mp3' },
+                { page: 18, audio: './01_html/slide18.mp3' },
+                { page: 19, audio: './01_html/slide19.mp3' },
+                { page: 20, audio: './01_html/slide20.mp3' },
+                { page: 21, audio: './01_html/slide21.mp3' },
+                { page: 22, audio: './01_html/slide22.mp3' },
+                { page: 23, audio: './01_html/slide23.mp3' },
+                { page: 24, audio: './01_html/slide24.mp3' },
+                { page: 25, audio: './01_html/slide25.mp3' },
+                { page: 26, audio: './01_html/slide26.mp3' },
+                { page: 27, audio: './01_html/slide27.mp3' },
+                { page: 28, audio: './01_html/slide28.mp3' },
+                { page: 29, audio: './01_html/slide29.mp3' },
+                { page: 30, audio: './01_html/slide30.mp3' },
+                { page: 31, audio: './01_html/slide31.mp3' },
+                { page: 32, audio: './01_html/slide32.mp3' },
+                { page: 33, audio: './01_html/slide33.mp3' },
+                { page: 34, audio: './01_html/slide34.mp3' },
+                { page: 35, audio: './01_html/slide35.mp3' },
+                { page: 36, audio: './01_html/slide36.mp3' },
+                { page: 37, audio: './01_html/slide37.mp3' },
+                { page: 38, audio: './01_html/slide38.mp3' },
+                { page: 39, audio: './01_html/slide39.mp3' },
+                { page: 40, audio: './01_html/slide40.mp3' },
+                { page: 41, audio: './01_html/slide41.mp3' },
+                { page: 42, audio: './01_html/slide42.mp3' },
+                { page: 43, audio: './01_html/slide43.mp3' },
+                { page: 44, audio: './01_html/slide44.mp3' },
+                { page: 45, audio: './01_html/slide45.mp3' },
+                { page: 46, audio: './01_html/slide46.mp3' },
+                { page: 47, audio: './01_html/slide47.mp3' },
+                { page: 48, audio: './01_html/slide48.mp3' },
+                { page: 49, audio: './01_html/slide49.mp3' },
+                { page: 50, audio: './01_html/slide50.mp3' },
+                { page: 51, audio: './01_html/slide51.mp3' },
+                { page: 52, audio: './01_html/slide52.mp3' },
+                { page: 53, audio: './01_html/slide53.mp3' },
+              ] },
+        } ] },
+      ] },
+    ] },
+  }, document.body);
+</script>
+</head>
+<body></body>
+</html>
