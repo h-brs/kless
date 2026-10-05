@@ -24,48 +24,8 @@ const pdf_viewer_config = {
   },
 };
 
-const slidecast_config = {
-  pdf_viewer: [
-    "ccm.component",
-    "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
-    pdf_viewer_config,
-  ],
-  viewer: pdf_viewer_config,
-  autoplay: true,
-  labels: {
-    navigation: "Slidecast-Navigation",
-    previous: "Zurück",
-    next: "Weiter",
-    step: "Schritt",
-    of: "von",
-    slide: "Folie",
-    audio: "Tonspur zur Folie",
-    invalidStep: "Bitte gib eine gültige Schrittnummer ein.",
-    playbackSpeed: "Wiedergabegeschwindigkeit",
-    audioShortcuts: "Tastatur: + / − Geschwindigkeit; , / . jeweils 10 Sekunden zurück / vor.",
-    comments: "Kommentare zur Folie",
-    commentsPlaceholder: "Die Kommentarfunktion wird später ergänzt.",
-    missingLinkTarget: "Die verlinkte PDF-Seite ist nicht Teil dieses Slidecasts.",
-    error: "Der Slidecast konnte nicht angezeigt werden: ",
-    pdfNotOpened: "Die PDF wurde nicht geöffnet.",
-  },
-};
-
-const chapter = (id, pages) => {
-  return {
-    pdf: `./${id}/slides.pdf`,
-    ignore: {
-      slides: Array.from({ length: pages }, (_, i) => ({
-        page: i + 1,
-        audio: `./${id}/slide${String(i + 1).padStart(2, "0")}.mp3`,
-      })),
-    },
-    ...slidecast_config,
-  };
-};
-
 export const config = {
-  title: "Einführung in Web Engineering ⋅ WS26 ⋅ Kless",
+  title: "Programmierung 1 ⋅ WS26 ⋅ Kless",
   description: "",
   labels: {
     back: "Zurück",
@@ -95,27 +55,43 @@ export const config = {
         ],
       },
       {
-        id: "01_html",
-        title: "Kapitel 1: WWW, HTTP, URI, HTML",
+        id: "01_grundbausteine",
+        title: "Kapitel 1: Algorithmische Grundbausteine",
         items: [
           {
-            id: "01_html-lecture",
+            id: "01_grundbausteine-lecture",
             title: "Vorlesung",
             icon: "🧑‍🏫",
             app: [
               "ccm.start",
-              "https://cdn.jsdelivr.net/gh/ccmjs/slidecast@v1.1.0/ccm.slidecast-1.1.0.min.mjs#sha384-l8tLDoXszYpItIkbcjxiPlKEZXu3yk97ctZD3D9liLWYZqwUsoQjVwI6K++JA9b/",
-              chapter("01_html", 53),
+              "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
+              { pdf: "./01_grundbausteine/slides.pdf", ...pdf_viewer_config },
             ],
           },
           {
-            id: "01_html-exercise",
+            id: "01_grundbausteine-exercise",
             title: "Übung",
             icon: "💻",
             app: [
               "ccm.start",
               "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
-              { pdf: "./01_html/exercise.pdf", ...pdf_viewer_config },
+              { pdf: "./01_grundbausteine/exercise.pdf", ...pdf_viewer_config },
+            ],
+          },
+        ],
+      },
+      {
+        id: "02_grammatiken",
+        title: "Kapitel 2: Aufbau von Programmiersprachen",
+        items: [
+          {
+            id: "02_grammatiken-lecture",
+            title: "Vorlesung",
+            icon: "🧑‍🏫",
+            app: [
+              "ccm.start",
+              "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
+              { pdf: "./02_grammatiken/slides.pdf", ...pdf_viewer_config },
             ],
           },
         ],
