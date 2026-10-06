@@ -24,43 +24,65 @@ const pdf_viewer_config = {
   },
 };
 
-const slidecast_config = {
-  pdf_viewer: [
-    "ccm.component",
-    "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
-    pdf_viewer_config,
-  ],
-  viewer: pdf_viewer_config,
-  autoplay: true,
-  labels: {
-    navigation: "Slidecast-Navigation",
-    previous: "Zurück",
-    next: "Weiter",
-    step: "Schritt",
-    of: "von",
-    slide: "Folie",
-    audio: "Tonspur zur Folie",
-    invalidStep: "Bitte gib eine gültige Schrittnummer ein.",
-    playbackSpeed: "Wiedergabegeschwindigkeit",
-    audioShortcuts: "Tastatur: + / − Geschwindigkeit; , / . jeweils 10 Sekunden zurück / vor.",
-    comments: "Kommentare zur Folie",
-    commentsPlaceholder: "Die Kommentarfunktion wird später ergänzt.",
-    missingLinkTarget: "Die verlinkte PDF-Seite ist nicht Teil dieses Slidecasts.",
-    error: "Der Slidecast konnte nicht angezeigt werden: ",
-    pdfNotOpened: "Die PDF wurde nicht geöffnet.",
-  },
+const pdf_viewer = (chapter, type = "exercise", title = "Übung", icon = "💻", filename = "exercise") => {
+  return {
+    id: `${chapter}-${type}`,
+    title,
+    icon,
+    app: [
+      "ccm.start",
+      "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
+      {
+        pdf: `./${chapter}/${filename}.pdf`,
+        ...pdf_viewer_config,
+      },
+    ],
+  };
 };
 
-const chapter = (id, pages) => {
+const slidecast = (chapter, pages) => {
   return {
-    pdf: `./${id}/slides.pdf`,
-    ignore: {
-      slides: Array.from({ length: pages }, (_, i) => ({
-        page: i + 1,
-        audio: `./${id}/slide${String(i + 1).padStart(2, "0")}.mp3`,
-      })),
-    },
-    ...slidecast_config,
+    id: `${chapter}-lecture`,
+    title: "Vorlesung",
+    icon: "🧑‍🏫",
+    app: [
+      "ccm.start",
+      "https://cdn.jsdelivr.net/gh/ccmjs/slidecast@v1.2.0/ccm.slidecast-1.2.0.min.mjs#sha384-iVpZR8MDLJrFCJLSL0feyFOGvLBcPT/zL64iqSMlJN9z/EhDGx1H55p3xgEIhdIe",
+      {
+        pdf_viewer: [
+          "ccm.component",
+          "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
+          pdf_viewer_config,
+        ],
+        viewer: pdf_viewer_config,
+        autoplay: true,
+        labels: {
+          navigation: "Slidecast-Navigation",
+          previous: "Zurück",
+          next: "Weiter",
+          step: "Schritt",
+          of: "von",
+          slide: "Folie",
+          audio: "Audio zur Folie",
+          invalidStep: "Bitte eine gültige Schrittnummer eingeben.",
+          autoplay: "Autoplay",
+          autoplayDescription: "Audio automatisch abspielen und zur nächsten Folie wechseln",
+          audioShortcuts: "Tastatur: + / − Geschwindigkeit; , / . zehn Sekunden zurück / vor.",
+          comments: "Kommentare zur Folie",
+          commentsPlaceholder: "Die Kommentarfunktion wird später ergänzt.",
+          missingLinkTarget: "Die verlinkte PDF-Seite ist nicht Teil dieses Slidecasts.",
+          error: "Der Slidecast konnte nicht angezeigt werden: ",
+          pdfNotOpened: "Die PDF wurde nicht geöffnet.",
+        },
+        pdf: `./${chapter}/slides.pdf`,
+        ignore: {
+          slides: Array.from({ length: pages }, (_, i) => ({
+            page: i + 1,
+            audio: `./${chapter}/slide${String(i + 1).padStart(2, "0")}.mp3`,
+          })),
+        },
+      },
+    ],
   };
 };
 
@@ -81,44 +103,12 @@ export const config = {
       {
         id: "00_start",
         title: "Einführung",
-        items: [
-          {
-            id: "00_start-lecture",
-            title: "Vorlesung",
-            icon: "🧑‍🏫",
-            app: [
-              "ccm.start",
-              "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
-              { pdf: "./00_start/slides.pdf", ...pdf_viewer_config },
-            ],
-          },
-        ],
+        items: [pdf_viewer("00_start", "lecture", "Vorlesung", "🧑‍🏫", "slides")],
       },
       {
         id: "01_html",
         title: "Kapitel 1: WWW, HTTP, URI, HTML",
-        items: [
-          {
-            id: "01_html-lecture",
-            title: "Vorlesung",
-            icon: "🧑‍🏫",
-            app: [
-              "ccm.start",
-              "https://cdn.jsdelivr.net/gh/ccmjs/slidecast@v1.1.0/ccm.slidecast-1.1.0.min.mjs#sha384-l8tLDoXszYpItIkbcjxiPlKEZXu3yk97ctZD3D9liLWYZqwUsoQjVwI6K++JA9b/",
-              chapter("01_html", 53),
-            ],
-          },
-          {
-            id: "01_html-exercise",
-            title: "Übung",
-            icon: "💻",
-            app: [
-              "ccm.start",
-              "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
-              { pdf: "./01_html/exercise.pdf", ...pdf_viewer_config },
-            ],
-          },
-        ],
+        items: [slidecast("01_html", 53), pdf_viewer("01_html")],
       },
     ],
   },
