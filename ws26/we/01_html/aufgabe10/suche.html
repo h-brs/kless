@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Themensuche zur Lerngruppe</title>
+</head>
+<body>
+  <main>
+    <h1>Themensuche</h1>
+    <!-- Für Aufgabe 10c method="get" durch method="post" ersetzen. -->
+    <form action="https://example.org/suche" method="get">
+      <p>
+        <label for="suchbegriff">Suchbegriff</label>
+        <input type="text" id="suchbegriff" name="q">
+      </p>
+      <p>
+        <label for="thema">Thema</label>
+        <select id="thema" name="thema">
+          <option value="http">HTTP</option>
+          <option value="html">HTML</option>
+        </select>
+      </p>
+      <button type="submit">Suchen</button>
+    </form>
+  </main>
+</body>
+</html>
