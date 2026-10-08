@@ -1,0 +1,5 @@
+main          { color: black; }
+p             { color: gray; }
+.info         { color: green; }
+#kurs .info   { color: blue; }
+p.info        { color: red; }

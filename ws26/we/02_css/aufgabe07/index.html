@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aufgabe 7: Boxmodell und Abstände – Übung 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Aufgabe 7: Boxmodell und Abstände</h1>
+  <h2>content-box</h2>
+  <div class="box inhalt">300px Inhalt, 350px einschließlich Rahmen, 370px einschließlich horizontaler Margins.</div>
+  <h2>border-box</h2>
+  <div class="box rahmen">250px Inhalt, 300px einschließlich Rahmen, 320px einschließlich horizontaler Margins.</div>
+  <h2>outline ohne zusätzlichen Layoutplatz</h2>
+  <div class="box rahmen kontur">Dieselben Größen wie bei border-box; die rote outline zählt nicht dazu.</div>
+  <h2>Kollabierende Margins</h2>
+  <div class="abstandstest"><p>Erster Absatz: margin-bottom 24px</p><p>Zweiter Absatz: margin-top 16px</p></div>
+  <p>Zwischen den beiden Absatzboxen liegen 24px, nicht 40px. Prüfe die Boxen in den Entwicklerwerkzeugen.</p>
+</body>
+</html>

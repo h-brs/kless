@@ -117,7 +117,7 @@ export const config = {
       {
         id: "02_css",
         title: "Kapitel 2: Cascading Style Sheets (CSS)",
-        items: [slidecast("02_css", 57)],
+        items: [slidecast("02_css", 57), pdf_viewer("02_css")],
       },
     ],
   },

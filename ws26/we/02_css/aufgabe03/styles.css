@@ -1,0 +1,9 @@
+a { color: #005a7a; text-decoration: underline; }
+a:hover { color: #154a6c; background-color: #e6f3fa; }
+a:focus { outline: 3px solid #005a7a; outline-offset: 3px; }
+/* Kein Treffer: Das erste Elementkind der section ist h2. */
+section > p:first-child { border: 2px solid red; }
+/* Treffer p1: Alle Elementgeschwister werden gezählt. */
+section > p:nth-child(2) { background-color: #e6f3fa; }
+p.info::before { content: "• "; color: #154a6c; }
+section:has(a[href$=".pdf"]) { border: 2px solid #154a6c; padding: 1rem; }

@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; line-height: 1.5; }
+.rahmen { position: relative; border: 2px solid gray; }
+.rahmen > div { padding: 1rem; background: #e6f3fa; }
+.rahmen > div:nth-child(2) { background: #c3dfe9; }
+.platz { min-height: 200vh; }
+.nach-oben { position: fixed; bottom: 1rem; right: 1rem; padding: 0.5rem; background: #154a6c; color: white; }

@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; line-height: 1.5; }
+.anzeige span { box-sizing: content-box; width: 120px; height: 60px; border: 1px solid #154a6c; }
+.inline span { display: inline; }
+.block span { display: block; }
+.inline-block span, .ausgeblendet span { display: inline-block; }
+.ausgeblendet span:nth-child(2) { display: none; }

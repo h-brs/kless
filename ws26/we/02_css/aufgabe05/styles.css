@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; line-height: 1.5; }
+.farbe { padding: 1rem; color: #102030; }
+.hex-lang { background-color: #3399cc; }
+.hex-kurz { background-color: #39c; }
+.rgb { background-color: rgb(51, 153, 204); }
+.hsl { background-color: hsl(200, 60%, 50%); }
+.hell, .dunkel { padding: 1rem; margin: 1rem 0; }
+.hell { background-color: white; color: #154a6c; border: 1px solid #154a6c; }
+.dunkel { background-color: black; color: white; }
+.alpha { padding: 1rem; background-color: rgba(51, 153, 204, 0.5); }
+.transparent { padding: 1rem; background-color: transparent; }
+.kontrast { color: #154a6c; background-color: #ffffff; padding: 1rem; }

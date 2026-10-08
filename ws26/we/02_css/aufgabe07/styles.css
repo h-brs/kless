@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; }
+.box { width: 300px; padding: 20px; border: 5px solid #154a6c; margin: 10px; background-color: #e6f3fa; }
+.inhalt { box-sizing: content-box; }
+.rahmen { box-sizing: border-box; }
+.kontur { outline: 3px solid red; }
+.abstandstest { border: 1px solid gray; }
+.abstandstest p { margin: 0; background-color: #e6f3fa; }
+.abstandstest p:first-child { margin-bottom: 24px; }
+.abstandstest p + p { margin-top: 16px; }

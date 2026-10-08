@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aufgabe 9: Fest im Viewport – Übung 2</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+.markiert { position: absolute; top: 0; right: 0; left: auto; width: 8rem; }
+  </style>
+</head>
+<body id="oben">
+  <h1>Aufgabe 9: Fest im Viewport</h1>
+  <p><a href="index.html">Alle Positionierungsfälle</a></p>
+  <p>Die mittlere Box ist absolut im Container positioniert. Der Link unten rechts ist dagegen fixed: Er bleibt beim Scrollen an derselben Stelle im Viewport.</p>
+  <div class="rahmen">
+    <div>Erste Box</div>
+    <div class="markiert">Mittlere Box</div>
+    <div>Dritte Box</div>
+  </div>
+  <p class="platz">Langer Inhalt zum Scrollen.</p>
+  <a class="nach-oben" href="#oben">Nach oben</a>
+</body>
+</html>

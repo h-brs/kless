@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aufgabe 2: Unmittelbares Geschwister – Übung 2</title>
+  <style>
+/* Erwartete IDs: p1. */
+h2 + p { border: 2px solid #154a6c; }
+  </style>
+</head>
+<body>
+  <h1>Aufgabe 2: Unmittelbares Geschwister</h1>
+  <nav aria-label="Selektoren"><a href="index.html">Direkte Kinder</a> · <a href="klasse.html">Klasse</a> · <a href="nachfahren.html">Nachfahren</a> · <a href="nachbar.html">Unmittelbares Geschwister</a> · <a href="geschwister.html">Spätere Geschwister</a> · <a href="attribut.html">PDF-Link</a> · <a href="id.html">ID</a> · <a href="klassenkombination.html">Beide Klassen</a> · <a href="https.html">HTTPS-Link</a></nav>
+  <p>Selektor: <code>h2 + p</code>. Erwartete IDs: <code>p1</code>.</p>
+  <section id="kurs">
+    <h2>Themen</h2>
+    <p id="p1" class="info">HTML</p>
+    <div><p id="p2">CSS</p></div>
+    <p id="p3" class="info extra">Übung</p>
+    <a id="a1" href="../slides.pdf">Materialien</a>
+  </section>
+  <p>Die vier Kombinatoren sind hier Leerzeichen, <code>&gt;</code>, <code>+</code> und <code>~</code>. Sie ändern die Treffer, tragen aber nicht zur Spezifität bei.</p>
+</body>
+</html>

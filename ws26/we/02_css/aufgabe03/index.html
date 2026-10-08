@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aufgabe 3: Pseudoklassen und Pseudoelemente – Übung 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Aufgabe 3: Pseudoklassen und Pseudoelemente</h1>
+  <section id="kurs">
+    <h2>Themen</h2>
+    <p id="p1" class="info">HTML</p>
+    <div><p id="p2">CSS</p></div>
+    <p id="p3" class="info extra">Übung</p>
+    <a id="a1" href="../slides.pdf">Materialien</a>
+  </section>
+  <p><code>:first-child</code> trifft hier keinen direkten Absatz. <code>:nth-child(2)</code> hebt <code>p1</code> hervor.</p>
+  <p>Vor <code>p1</code> und <code>p3</code> erscheint ein Punkt. Der PDF-Link bewirkt über <code>:has()</code> den Rahmen um den Abschnitt.</p>
+  <p>Bewege den Mauszeiger über den Link und springe ihn mit der Tabulatortaste an. Der Fokus muss sichtbar bleiben.</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aufgabe 9: Haftende Navigation – Übung 2</title>
+  <style>
+body { font-family: Arial, sans-serif; line-height: 1.5; }
+.lang { border: 2px solid #154a6c; }
+.haftend { position: sticky; top: 0; background: white; padding: 1rem; }
+.platz { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <h1>Aufgabe 9: Haftende Navigation</h1>
+  <p><a href="index.html">Alle Positionierungsfälle</a></p>
+  <p>Scrolle bis über das Abschnittsende hinaus. Die Navigation haftet am oberen Fensterrand, wird aber vom unteren Rand ihres Abschnitts begrenzt.</p>
+  <section class="lang">
+    <nav class="haftend"><a href="#ende">Zum Abschnittsende</a></nav>
+    <p class="platz">Langer Inhalt innerhalb des Abschnitts.</p>
+    <p id="ende">Abschnittsende</p>
+  </section>
+  <p class="platz">Weiterer Inhalt hinter dem Abschnitt: Die Navigation bleibt nicht mehr oben stehen.</p>
+</body>
+</html>
