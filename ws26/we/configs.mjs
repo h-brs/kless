@@ -108,7 +108,16 @@ export const config = {
       {
         id: "01_html",
         title: "Kapitel 1: WWW, HTTP, URI, HTML",
-        items: [slidecast("01_html", 53), pdf_viewer("01_html")],
+        items: [
+          slidecast("01_html", 53),
+          pdf_viewer("01_html"),
+          pdf_viewer("01_html", "solution", "Musterlösung", "✅", "solution"),
+        ],
+      },
+      {
+        id: "02_css",
+        title: "Kapitel 2: Cascading Style Sheets (CSS)",
+        items: [slidecast("02_css", 57)],
       },
     ],
   },
