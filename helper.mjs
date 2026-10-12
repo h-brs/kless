@@ -1,26 +1,28 @@
 export const pdf_viewer_config = {
   labels: {
-    viewer: "PDF-Betrachter",
+    viewer: "PDF-Viewer",
     previous: "Zurück",
     next: "Weiter",
     page: "Seite",
     of: "von",
     zoomOut: "Verkleinern",
     zoomIn: "Vergrößern",
-    fit: "An Breite anpassen",
+    fit: "Breite anpassen",
     download: "Herunterladen",
     loading: "PDF wird geladen …",
     rendering: "Seite wird geladen …",
     missing: "Keine PDF-URL angegeben.",
-    error: "Die PDF konnte nicht geladen oder angezeigt werden.",
-    password: "Bitte gib das Passwort für diese PDF ein.",
-    passwordIncorrect: "Falsches Passwort. Bitte versuche es erneut.",
+    error: "Das PDF konnte nicht geladen oder angezeigt werden.",
+    password: "Bitte das Passwort für dieses PDF eingeben.",
+    passwordIncorrect: "Das Passwort ist falsch. Bitte erneut versuchen.",
     passwordLabel: "Passwort",
     unlock: "PDF öffnen",
     cancel: "Abbrechen",
-    passwordCancelled: "Das Öffnen der PDF wurde abgebrochen.",
-    invalidPage: "Bitte gib eine gültige Seitennummer ein.",
-    link: "Link in der PDF",
+    passwordCancelled: "Das Öffnen des PDFs wurde abgebrochen.",
+    invalidPage: "Bitte eine gültige Seitenzahl eingeben.",
+    link: "Link im PDF",
+    thumbnails: "Folienübersicht",
+    thumbnailError: "Vorschau nicht verfügbar",
   },
 };
 
@@ -31,7 +33,7 @@ export const pdf_viewer = (chapter, type = "lecture", title = "Vorlesung", icon 
     icon,
     app: [
       "ccm.start",
-      "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
+      "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.1.0/ccm.pdf_viewer-1.1.0.min.mjs#sha384-h/Tddha/iX7T/AuKwYFOJwxb1fASNwPtN1JiTSVJBt762c2Wyt/uLK3jHVgpaQ8A",
       {
         pdf: `./${chapter}/${filename}.pdf`,
         ...pdf_viewer_config,
@@ -47,15 +49,14 @@ export const slidecast = (chapter, pages) => {
     icon: "🧑‍🏫",
     app: [
       "ccm.start",
-      "https://cdn.jsdelivr.net/gh/ccmjs/slidecast@v1.2.0/ccm.slidecast-1.2.0.min.mjs#sha384-iVpZR8MDLJrFCJLSL0feyFOGvLBcPT/zL64iqSMlJN9z/EhDGx1H55p3xgEIhdIe",
+      "https://cdn.jsdelivr.net/gh/ccmjs/slidecast@v1.3.0/ccm.slidecast-1.3.0.min.mjs#sha384-Yf3pYGBl58kHejT6f9PtR7Zk2l2fIab9LyCn32KcQ+Rj7dXKRx/LGcUBzX0EgDBy",
       {
         pdf_viewer: [
           "ccm.component",
-          "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.0.0/ccm.pdf_viewer-1.0.0.min.mjs#sha384-1NwNCUojyNg7BPq0Odf5LRpb3kJ1qlCXpZHd1vHHHYNzm4AONSwujk5CH5TFcDlE",
+          "https://cdn.jsdelivr.net/gh/ccmjs/pdf_viewer@v1.1.0/ccm.pdf_viewer-1.1.0.min.mjs#sha384-h/Tddha/iX7T/AuKwYFOJwxb1fASNwPtN1JiTSVJBt762c2Wyt/uLK3jHVgpaQ8A",
           pdf_viewer_config,
         ],
         viewer: pdf_viewer_config,
-        autoplay: true,
         labels: {
           navigation: "Slidecast-Navigation",
           previous: "Zurück",
