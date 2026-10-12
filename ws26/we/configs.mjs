@@ -1,4 +1,4 @@
-import { pdf_viewer, slidecast } from "/helper.mjs";
+import { pdf_viewer, slidecast } from "../../helper.mjs";
 
 export const config = {
   title: "Einführung in Web Engineering ⋅ WS26 ⋅ Kless",
