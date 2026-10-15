@@ -26,7 +26,7 @@ export const pdf_viewer_config = {
   },
 };
 
-export const pdf_viewer = (chapter, type = "lecture", title = "Vorlesung", icon = "🧑‍🏫", filename = "slides") => {
+export const pdf_viewer = (chapter, type = "lecture", title = "Vorlesung", icon = "🧑‍🏫", filename = type) => {
   return {
     id: `${chapter}-${type}`,
     title,
@@ -75,7 +75,7 @@ export const slidecast = (chapter, pages) => {
           error: "Der Slidecast konnte nicht angezeigt werden: ",
           pdfNotOpened: "Die PDF wurde nicht geöffnet.",
         },
-        pdf: `./${chapter}/slides.pdf`,
+        pdf: `./${chapter}/lecture.pdf`,
         ignore: {
           slides: Array.from({ length: pages }, (_, i) => ({
             page: i + 1,

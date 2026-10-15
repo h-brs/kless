@@ -17,21 +17,30 @@ export const config = {
       {
         id: "00_start",
         title: "Einführung",
-        items: [pdf_viewer("00_start", "lecture", "Vorlesung", "🧑‍🏫", "slides")],
+        items: [pdf_viewer("00_start", "lecture", "Vorlesung", "🧑‍🏫")],
       },
       {
         id: "01_html",
         title: "Kapitel 1: WWW, HTTP, URI, HTML",
         items: [
           slidecast("01_html", 53),
-          pdf_viewer("01_html", "exercise", "Übung", "💻", "exercise"),
-          pdf_viewer("01_html", "solution", "Musterlösung", "✅", "solution"),
+          pdf_viewer("01_html", "exercise", "Übung", "💻"),
+          pdf_viewer("01_html", "solution", "Musterlösung", "✅"),
         ],
       },
       {
         id: "02_css",
         title: "Kapitel 2: Cascading Style Sheets (CSS)",
-        items: [slidecast("02_css", 57), pdf_viewer("02_css", "exercise", "Übung", "💻", "exercise")],
+        items: [
+          slidecast("02_css", 57),
+          pdf_viewer("02_css", "exercise", "Übung", "💻"),
+          pdf_viewer("02_css", "solution", "Musterlösung", "✅"),
+        ],
+      },
+      {
+        id: "03_rwd",
+        title: "Kapitel 3: Responsive Web Design (RWD)",
+        items: [slidecast("03_rwd", 58)],
       },
     ],
   },

@@ -15,7 +15,7 @@ header, main, footer {
   border: 1px solid #b8c9d6;
   background-color: white;
 }
-h1, h2 { color: #154a6c; }
+h1, h2 { color: #154a6c; border-bottom: 2px solid currentColor; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 nav { margin: 1rem 0; }
