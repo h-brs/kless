@@ -40,7 +40,16 @@ export const config = {
       {
         id: "03_rwd",
         title: "Kapitel 3: Responsive Web Design (RWD)",
-        items: [slidecast("03_rwd", 58)],
+        items: [
+          slidecast("03_rwd", 58),
+          {
+            id: "02_css-demos",
+            title: "Flexbox verstehen",
+            icon: "🧑‍💻",
+            description: "grow, shrink und basis interaktiv ausprobieren",
+            href: "./03_rwd/flex/",
+          },
+        ],
       },
     ],
   },
