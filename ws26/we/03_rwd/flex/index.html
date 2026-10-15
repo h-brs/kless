@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox verstehen · Einführung in Webengineering</title>
+  <meta name="description" content="Interaktiv ausprobieren, wie flex-grow, flex-shrink und flex-basis die Breite von Flex-Items verändern.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div><p class="eyebrow">Einführung in Webengineering · Kapitel 3</p><h1>Flexbox verstehen<span>.</span></h1></div>
+    <div class="syntax" aria-label="Syntax: flex: grow shrink basis;"><span>flex:</span> <b>grow</b> <b>shrink</b> <b>basis</b><span>;</span></div>
+  </header>
+  <main>
+    <p class="intro">Ändere die drei Werte für jedes Element. Der Browser verteilt den Platz – du siehst sofort, wie breit die Elemente tatsächlich werden.</p>
+    <noscript><p class="notice">Bitte aktiviere JavaScript, um die Regler zu verwenden. Das Grundbeispiel zeigt drei Elemente mit jeweils <code>flex: 1 1 150px</code> in einem 750px breiten Container.</p></noscript>
+    <form id="controls" autocomplete="off">
+      <div class="toolbar">
+        <div class="preset-control">
+          <label for="preset">Mit einem Beispiel starten</label>
+          <select id="preset">
+            <option value="custom" disabled>Eigene Werte</option>
+            <option value="equal" selected>1 · Gleichmäßig wachsen</option>
+            <option value="grow-b">2 · B bekommt mehr zusätzlichen Platz</option>
+            <option value="shrink">3 · Alle müssen schrumpfen</option>
+            <option value="shrink-b">4 · B schrumpft stärker</option>
+            <option value="weighted">5 · Größere Basis, größerer Verlust</option>
+            <option value="overflow">6 · Kein Schrumpfen: Überlauf</option>
+            <option value="zero">7 · Basis 0: Wachstum bestimmt die Breite</option>
+            <option value="partial">8 · Kleine grow-Summe: Platz bleibt frei</option>
+          </select>
+        </div>
+        <button id="reset" type="button">Zurücksetzen</button>
+        <p id="preset-note">Starte mit gleichen Werten. Jedes Element erhält denselben Anteil am zusätzlichen Platz.</p>
+      </div>
+      <section class="controls-section" aria-labelledby="settings-title">
+        <h2 id="settings-title" class="section-title"><span>01</span> Werte einstellen</h2>
+        <div class="container-control">
+          <label for="container-width">Containerbreite <small>in CSS-Pixeln</small></label>
+          <input id="container-width" type="range" min="160" max="1100" step="1" value="750" data-prop="container">
+          <div class="number-unit"><input id="container-width-number" type="number" min="160" max="1100" step="1" value="750" data-prop="container" aria-label="Containerbreite in CSS-Pixeln"><span>px</span></div>
+          <button type="button" id="fit">An sichtbare Fläche anpassen</button>
+        </div>
+        <div class="item-controls">
+        <fieldset class="item-settings item-a">
+          <legend><span class="item-marker">A</span> Element A</legend>
+          <div class="value-control">
+            <label for="a-grow"><code>grow</code><span>Wachsen</span></label>
+            <input id="a-grow" type="range" min="0" max="5" step="0.1" value="1" data-item="A" data-prop="grow">
+            <input id="a-grow-number" type="number" min="0" max="5" step="0.1" value="1" data-item="A" data-prop="grow" aria-label="Element A: flex-grow">
+          </div>
+          <div class="value-control">
+            <label for="a-shrink"><code>shrink</code><span>Schrumpfen</span></label>
+            <input id="a-shrink" type="range" min="0" max="5" step="0.1" value="1" data-item="A" data-prop="shrink">
+            <input id="a-shrink-number" type="number" min="0" max="5" step="0.1" value="1" data-item="A" data-prop="shrink" aria-label="Element A: flex-shrink">
+          </div>
+          <div class="value-control">
+            <label for="a-basis"><code>basis</code><span>Basis in px</span></label>
+            <input id="a-basis" type="range" min="0" max="500" step="1" value="150" data-item="A" data-prop="basis">
+            <input id="a-basis-number" type="number" min="0" max="500" step="1" value="150" data-item="A" data-prop="basis" aria-label="Element A: flex-basis in Pixeln">
+          </div>
+          <p class="declaration"><code id="code-A">flex: 1 1 150px;</code></p>
+        </fieldset>
+        <fieldset class="item-settings item-b">
+          <legend><span class="item-marker">B</span> Element B</legend>
+          <div class="value-control">
+            <label for="b-grow"><code>grow</code><span>Wachsen</span></label>
+            <input id="b-grow" type="range" min="0" max="5" step="0.1" value="1" data-item="B" data-prop="grow">
+            <input id="b-grow-number" type="number" min="0" max="5" step="0.1" value="1" data-item="B" data-prop="grow" aria-label="Element B: flex-grow">
+          </div>
+          <div class="value-control">
+            <label for="b-shrink"><code>shrink</code><span>Schrumpfen</span></label>
+            <input id="b-shrink" type="range" min="0" max="5" step="0.1" value="1" data-item="B" data-prop="shrink">
+            <input id="b-shrink-number" type="number" min="0" max="5" step="0.1" value="1" data-item="B" data-prop="shrink" aria-label="Element B: flex-shrink">
+          </div>
+          <div class="value-control">
+            <label for="b-basis"><code>basis</code><span>Basis in px</span></label>
+            <input id="b-basis" type="range" min="0" max="500" step="1" value="150" data-item="B" data-prop="basis">
+            <input id="b-basis-number" type="number" min="0" max="500" step="1" value="150" data-item="B" data-prop="basis" aria-label="Element B: flex-basis in Pixeln">
+          </div>
+          <p class="declaration"><code id="code-B">flex: 1 1 150px;</code></p>
+        </fieldset>
+        <fieldset class="item-settings item-c">
+          <legend><span class="item-marker">C</span> Element C</legend>
+          <div class="value-control">
+            <label for="c-grow"><code>grow</code><span>Wachsen</span></label>
+            <input id="c-grow" type="range" min="0" max="5" step="0.1" value="1" data-item="C" data-prop="grow">
+            <input id="c-grow-number" type="number" min="0" max="5" step="0.1" value="1" data-item="C" data-prop="grow" aria-label="Element C: flex-grow">
+          </div>
+          <div class="value-control">
+            <label for="c-shrink"><code>shrink</code><span>Schrumpfen</span></label>
+            <input id="c-shrink" type="range" min="0" max="5" step="0.1" value="1" data-item="C" data-prop="shrink">
+            <input id="c-shrink-number" type="number" min="0" max="5" step="0.1" value="1" data-item="C" data-prop="shrink" aria-label="Element C: flex-shrink">
+          </div>
+          <div class="value-control">
+            <label for="c-basis"><code>basis</code><span>Basis in px</span></label>
+            <input id="c-basis" type="range" min="0" max="500" step="1" value="150" data-item="C" data-prop="basis">
+            <input id="c-basis-number" type="number" min="0" max="500" step="1" value="150" data-item="C" data-prop="basis" aria-label="Element C: flex-basis in Pixeln">
+          </div>
+          <p class="declaration"><code id="code-C">flex: 1 1 150px;</code></p>
+        </fieldset>
+        </div>
+      </section>
+    </form>
+    <section class="preview-section" aria-labelledby="preview-title">
+      <div class="section-heading"><h2 id="preview-title" class="section-title"><span>02</span> Veränderung beobachten</h2><span id="mode" class="mode">Wachsen</span></div>
+      <p class="preview-hint">Beide Reihen haben denselben Maßstab. Die gestrichelte Linie markiert das Containerende. Breite Beispiele kannst du horizontal scrollen.</p>
+      <div class="stage-scroll" id="stage-scroll" tabindex="0" role="region" aria-label="Flexbox-Vergleich, horizontal scrollbar">
+        <div id="stage" class="stage">
+          <div class="ruler" id="ruler"><span>0</span><span id="container-label">750 px</span></div>
+          <p class="track-label">Basisbreiten <span>vor der Verteilung</span></p>
+          <div id="basis-track" class="basis-track track">
+                <div class="basis-item item-a" id="basis-A" aria-hidden="true"><span>A · 150 px</span></div>
+                <div class="basis-item item-b" id="basis-B" aria-hidden="true"><span>B · 150 px</span></div>
+                <div class="basis-item item-c" id="basis-C" aria-hidden="true"><span>C · 150 px</span></div>
+          </div>
+          <p class="track-label">Tatsächliche Breiten <span>nach der Verteilung</span></p>
+          <div id="flex-container" class="flex-container track">
+                <div class="flex-item item-a" id="item-A">
+                  <div class="item-content"><strong>A</strong><span class="item-width" id="width-A">250 px</span><p>Dieser Text passt sich der verfügbaren Breite an.</p></div>
+                </div>
+                <div class="flex-item item-b" id="item-B">
+                  <div class="item-content"><strong>B</strong><span class="item-width" id="width-B">250 px</span><p>Dieser Text passt sich der verfügbaren Breite an.</p></div>
+                </div>
+                <div class="flex-item item-c" id="item-C">
+                  <div class="item-content"><strong>C</strong><span class="item-width" id="width-C">250 px</span><p>Dieser Text passt sich der verfügbaren Breite an.</p></div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="balance"><p id="calculation">750 px − 450 px = 300 px zusätzlicher Platz</p><p id="remainder">Der Container ist ausgefüllt.</p></div>
+    </section>
+    <section class="explanation-section" aria-labelledby="explanation-title">
+      <h2 id="explanation-title" class="section-title"><span>03</span> Ergebnis verstehen</h2>
+      <div class="explanation-grid">
+        <div>
+          <h3 id="reason-title">Zusätzlichen Platz verteilen</h3>
+          <p id="reason">Die grow-Faktoren bestimmen, welchen Anteil des zusätzlichen Platzes jedes Element erhält.</p>
+          <p id="special-note" class="notice" hidden></p>
+          <p class="measurement-note">Die Ergebniswerte sind im Browser gemessen und auf eine Nachkommastelle gerundet. Bei sehr schmalen Boxen kann die Beschriftung abgeschnitten sein; hier bleiben alle Werte lesbar.</p>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Berechnete Breiten, bei Bedarf scrollbar">
+          <table>
+            <caption>Basis → Änderung → Ergebnis</caption>
+            <thead><tr><th scope="col">Element</th><th scope="col">Basis</th><th scope="col" id="weight-heading">grow</th><th scope="col">Änderung</th><th scope="col">Ergebnis</th></tr></thead>
+            <tbody>
+                <tr><th scope="row"><span class="item-marker item-a">A</span></th><td id="basis-value-A">150 px</td><td id="weight-A">1</td><td id="change-A">+100 px</td><td><strong id="result-A">250 px</strong></td></tr>
+                <tr><th scope="row"><span class="item-marker item-b">B</span></th><td id="basis-value-B">150 px</td><td id="weight-B">1</td><td id="change-B">+100 px</td><td><strong id="result-B">250 px</strong></td></tr>
+                <tr><th scope="row"><span class="item-marker item-c">C</span></th><td id="basis-value-C">150 px</td><td id="weight-C">1</td><td id="change-C">+100 px</td><td><strong id="result-C">250 px</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+    </section>
+    <div class="details-grid">
+      <details>
+        <summary>Was bedeuten die drei Werte?</summary>
+        <dl>
+          <dt><code>flex-grow</code> · zusätzlicher Platz</dt><dd>Gewicht für das Wachsen. Bei <code>0</code> erhält das Element keinen Zuwachs. Ein doppelt so großer Faktor bedeutet nicht automatisch eine doppelt so große Endbreite.</dd>
+          <dt><code>flex-shrink</code> · fehlender Platz</dt><dd>Gewicht für das Schrumpfen. Dabei zählt auch die Basisbreite: <code>shrink × basis</code>. Bei <code>0</code> schrumpft das Element nicht.</dd>
+          <dt><code>flex-basis</code> · Ausgangsgröße</dt><dd>In diesem Versuch ist das eine Breite in Pixeln. Nach dem Wachsen oder Schrumpfen kann die tatsächliche Breite anders sein. CSS unterstützt auch weitere Basiswerte, etwa <code>auto</code> und Prozentangaben.</dd>
+        </dl>
+        <p>Hier gelten eine Zeile (<code>nowrap</code>), <code>gap: 0</code> und <code>min-width: 0</code>. Die Flex-Items haben keine Rahmen, Margins oder Paddings. So beeinflussen diese Größen die Rechnung nicht. Die Textabstände liegen in einem inneren Element.</p>
+        <p>Ohne <code>min-width: 0</code> kann die automatische Mindestbreite eines Flex-Items das Schrumpfen begrenzen.</p>
+      </details>
+      <details id="css-details">
+        <summary>Aktuellen CSS-Code ansehen</summary>
+        <pre><code id="css-code"></code></pre>
+        <p>Die Klassen <code>.a</code>, <code>.b</code> und <code>.c</code> gehören an drei direkte Kindelemente von <code>.container</code>.</p>
+      </details>
+    </div>
+  </main>
+  <footer class="page-footer"><span>Flexbox · Einführung in Webengineering</span><span>Zum Nachlesen: <a href="https://developer.mozilla.org/de/docs/Web/CSS/flex">MDN: flex</a> · <a href="https://www.w3.org/TR/css-flexbox-1/#resolve-flexible-lengths">CSS-Spezifikation</a></span></footer>
+</body>
+</html>
