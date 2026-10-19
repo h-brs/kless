@@ -42,6 +42,11 @@ export const config = {
         title: "Kapitel 3: Einstieg in Java",
         items: [pdf_viewer("03_java"), pdf_viewer("03_java", "exercise", "Übung", "💻")],
       },
+      {
+        id: "04_datentypen",
+        title: "Kapitel 4: Primitive Datentypen",
+        items: [pdf_viewer("04_datentypen")],
+      },
     ],
   },
 };
