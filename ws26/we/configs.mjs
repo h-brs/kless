@@ -42,8 +42,9 @@ export const config = {
         title: "Kapitel 3: Responsive Web Design (RWD)",
         items: [
           slidecast("03_rwd", 58),
+          pdf_viewer("03_rwd", "exercise", "Übung", "💻"),
           {
-            id: "02_css-demos",
+            id: "03_rwd-demos",
             title: "Flexbox verstehen",
             icon: "🧑‍💻",
             description: "grow, shrink und basis interaktiv ausprobieren",
