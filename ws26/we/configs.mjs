@@ -56,7 +56,16 @@ export const config = {
       {
         id: "04_js",
         title: "Kapitel 4: JavaScript (JS)",
-        items: [slidecast("04_js", 69)],
+        items: [
+          slidecast("04_js", 69),
+          {
+            id: "04_js-debugger",
+            title: "JavaScript Debugger",
+            icon: "🧑‍💻",
+            description: "Debugging von JavaScript-Code",
+            href: "./04_js/Debugger-Demo.mp4",
+          },
+        ],
       },
     ],
   },
