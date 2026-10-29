@@ -43,6 +43,7 @@ export const config = {
         items: [
           slidecast("03_rwd", 58),
           pdf_viewer("03_rwd", "exercise", "Übung", "💻"),
+          pdf_viewer("03_rwd", "solution", "Musterlösung", "✅"),
           {
             id: "03_rwd-demos",
             title: "Flexbox verstehen",
@@ -51,6 +52,11 @@ export const config = {
             href: "./03_rwd/flex/",
           },
         ],
+      },
+      {
+        id: "04_js",
+        title: "Kapitel 4: JavaScript (JS)",
+        items: [slidecast("04_js", 69)],
       },
     ],
   },
