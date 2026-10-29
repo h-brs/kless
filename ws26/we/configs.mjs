@@ -58,6 +58,7 @@ export const config = {
         title: "Kapitel 4: JavaScript (JS)",
         items: [
           slidecast("04_js", 69),
+          pdf_viewer("04_js", "exercise", "Übung", "💻"),
           {
             id: "04_js-debugger",
             title: "JavaScript Debugger",
