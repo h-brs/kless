@@ -40,12 +40,29 @@ export const config = {
       {
         id: "03_java",
         title: "Kapitel 3: Einstieg in Java",
-        items: [pdf_viewer("03_java"), pdf_viewer("03_java", "exercise", "Übung", "💻")],
+        items: [
+          pdf_viewer("03_java"),
+          pdf_viewer("03_java", "exercise", "Übung", "💻"),
+          pdf_viewer("03_java", "solution", "Musterlösung", "✅"),
+        ],
       },
       {
         id: "04_datentypen",
         title: "Kapitel 4: Primitive Datentypen",
-        items: [pdf_viewer("04_datentypen")],
+        items: [
+          pdf_viewer("04_datentypen"),
+          pdf_viewer("04_datentypen", "exercise", "Übung", "💻"),
+          pdf_viewer("04_datentypen", "solution", "Musterlösung", "✅"),
+        ],
+      },
+      {
+        id: "05_methoden",
+        title: "Kapitel 5: Methoden",
+        items: [
+          pdf_viewer("05_methoden"),
+          pdf_viewer("05_methoden", "exercise", "Übung", "💻"),
+          //pdf_viewer("05_methoden", "solution", "Musterlösung", "✅"),
+        ],
       },
     ],
   },
