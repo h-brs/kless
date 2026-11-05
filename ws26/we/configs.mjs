@@ -59,6 +59,7 @@ export const config = {
         items: [
           slidecast("04_js", 69),
           pdf_viewer("04_js", "exercise", "Übung", "💻"),
+          pdf_viewer("04_js", "solution", "Musterlösung", "✅"),
           {
             id: "04_js-debugger",
             title: "JavaScript Debugger",
@@ -67,6 +68,11 @@ export const config = {
             href: "./04_js/Debugger-Demo.mp4",
           },
         ],
+      },
+      {
+        id: "05_dom",
+        title: "Kapitel 5: Document Object Model (DOM)",
+        items: [slidecast("05_dom", 65)],
       },
     ],
   },
