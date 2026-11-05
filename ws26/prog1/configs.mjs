@@ -61,7 +61,7 @@ export const config = {
         items: [
           pdf_viewer("05_methoden"),
           pdf_viewer("05_methoden", "exercise", "Übung", "💻"),
-          //pdf_viewer("05_methoden", "solution", "Musterlösung", "✅"),
+          pdf_viewer("05_methoden", "solution", "Musterlösung", "✅"),
         ],
       },
     ],
