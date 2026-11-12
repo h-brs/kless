@@ -81,7 +81,11 @@ export const config = {
       {
         id: "06_es",
         title: "Kapitel 6: ECMAScript (ES)",
-        items: [slidecast("06_es", 64)],
+        items: [
+          slidecast("06_es", 64),
+          pdf_viewer("06_es", "exercise", "Übung", "💻"),
+          //pdf_viewer("06_es", "solution", "Musterlösung", "✅"),
+        ],
       },
     ],
   },
