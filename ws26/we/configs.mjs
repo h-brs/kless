@@ -72,7 +72,11 @@ export const config = {
       {
         id: "05_dom",
         title: "Kapitel 5: Document Object Model (DOM)",
-        items: [slidecast("05_dom", 65), pdf_viewer("05_dom", "exercise", "Übung", "💻")],
+        items: [
+          slidecast("05_dom", 65),
+          pdf_viewer("05_dom", "exercise", "Übung", "💻"),
+          pdf_viewer("05_dom", "solution", "Musterlösung", "✅"),
+        ],
       },
       {
         id: "06_es",
