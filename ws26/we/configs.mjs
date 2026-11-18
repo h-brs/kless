@@ -87,6 +87,15 @@ export const config = {
           //pdf_viewer("06_es", "solution", "Musterlösung", "✅"),
         ],
       },
+      {
+        id: "07_functional",
+        title: "Kapitel 7: Funktionale Programmierung",
+        items: [
+          slidecast("07_functional", 38),
+          //pdf_viewer("07_functional", "exercise", "Übung", "💻"),
+          //pdf_viewer("07_functional", "solution", "Musterlösung", "✅"),
+        ],
+      },
     ],
   },
 };
