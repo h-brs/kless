@@ -96,6 +96,15 @@ export const config = {
           //pdf_viewer("07_functional", "solution", "Musterlösung", "✅"),
         ],
       },
+      {
+        id: "08_async",
+        title: "Kapitel 8: Asynchrone Programmierung",
+        items: [
+          slidecast("08_async", 86),
+          //pdf_viewer("08_async", "exercise", "Übung", "💻"),
+          //pdf_viewer("08_async", "solution", "Musterlösung", "✅"),
+        ],
+      },
     ],
   },
 };
