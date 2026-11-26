@@ -93,7 +93,7 @@ export const config = {
         items: [
           slidecast("07_functional", 38),
           pdf_viewer("07_functional", "exercise", "Übung", "💻"),
-          //pdf_viewer("07_functional", "solution", "Musterlösung", "✅"),
+          pdf_viewer("07_functional", "solution", "Musterlösung", "✅"),
         ],
       },
       {
@@ -101,7 +101,7 @@ export const config = {
         title: "Kapitel 8: Asynchrone Programmierung",
         items: [
           slidecast("08_async", 86),
-          //pdf_viewer("08_async", "exercise", "Übung", "💻"),
+          pdf_viewer("08_async", "exercise", "Übung", "💻"),
           //pdf_viewer("08_async", "solution", "Musterlösung", "✅"),
         ],
       },
